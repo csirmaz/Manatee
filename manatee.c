@@ -111,7 +111,7 @@ T_DATA do_experiments(T_DATA average1, T_DATA average2)
     T_DATA x, limit;
     
     limit = fabs(average2 - average1);
-    printf("Avg1:%lf Avg2:%lf Limit:%lf\n", average1, average2, limit);
+    printf("Average of set 1:%lf Average of set 2:%lf Difference:%lf\n", average1, average2, limit);
     
     for(e=0; e<NUM_EXPERIMENTS; e++){
         x = fabs(get_average_of_n(SIZE_2) - get_average_of_n(SIZE_1));
@@ -130,7 +130,7 @@ int main(void)
     
     load_data();
     
-    printf("Ratio of experiments that yielded the same or a larger distance than that between the sets: R=%lf\n",
+    printf("Ratio of experiments that yielded the same or a larger difference\nthan that between the averages of the original sets:\nR=%lf\n",
         do_experiments(SUM_1/((T_DATA)SIZE_1), SUM_2/((T_DATA)SIZE_2))
     );
     return 0;
